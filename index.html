@@ -53,20 +53,8 @@
             version          : 'v9.0'
           });
 
-          var callback = function(response) {
-            console.log(response);
-            // statusChangeCallback(response);
-            if(response.status === 'connected'){
-              document.querySelector('#authBtn').value = 'Logout';
-            } else {
-              document.querySelector('#authBtn').value = 'Login';
-            }
-          }
-
-
-          FB.getLoginStatus(callback);
-         FB.getLoginStatus(checkLoginStatus);
-       }
+          FB.getLoginStatus(checkLoginStatus)
+       };
 
 
        (function(d, s, id){
@@ -77,7 +65,10 @@
           fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-         </script>
+
+
+
+     </script>
 
 
 
