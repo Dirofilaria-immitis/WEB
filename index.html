@@ -35,8 +35,7 @@
 <body>
 
       <script>
-            /*  var callback = function(response){
-                statusChangeCallback(response)
+             var checkLoginStatus = function(response){
                 console.log(response);
                 if(response.status === 'connected'){
                  document.querySelector('#authBtn').value = 'Logout';
@@ -54,9 +53,19 @@
             version          : 'v9.0'
           });
 
+          var callback = function(response) {
+            console.log(response);
+            // statusChangeCallback(response);
+            if(response.status === 'connected'){
+              document.querySelector('#authBtn').value = 'Logout';
+            } else {
+              document.querySelector('#authBtn').value = 'Login';
+            }
+          }
 
 
-         FB.getLoginStatus(callback);
+          FB.getLoginStatus(callback);
+         FB.getLoginStatus(checkLoginStatus);
        }
 
 
@@ -74,10 +83,10 @@
 
 
 
-<script>
+    <script>
 
 
-
+ /*
   var checkLoginStatus = function(response) {
     console.log(response);
     // statusChangeCallback(response);
