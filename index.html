@@ -33,7 +33,42 @@
 
 
 <body>
-  <div id="fb-root"></div>
+  <script>
+              var callback = function(response){
+                statusChangeCallback(response)
+                console.log(response);
+                if(response.status === 'connected'){
+                 document.querySelector('#authBtn').value = 'Logout';
+               }
+                else{
+                  document.querySelector('#authBtn').value = 'Login';
+                }
+              }
+
+            window.fbAsyncInit = function(){
+          FB.init({
+            appId            : '378593423422786',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v9.0'
+          });
+
+
+
+         FB.getLoginStatus(callback);
+       }
+
+
+       (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "https://connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+         //페이스북 SDK 호출
+
+         </script>
   <input type="button" value="night" onclick="Night_Mode(this)">
   <input type="button" name="login" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
@@ -127,42 +162,7 @@ encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
   </div>
 
-  <script>
-              var callback = function(response){
-                statusChangeCallback(response)
-                console.log(response);
-                if(response.status === 'connected'){
-                 document.querySelector('#authBtn').value = 'Logout';
-               }
-                else{
-                  document.querySelector('#authBtn').value = 'Login';
-                }
-              }
 
-            window.fbAsyncInit = function(){
-          FB.init({
-            appId            : '378593423422786',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v9.0'
-          });
-
-
-
-         FB.getLoginStatus(callback);
-       }
-
-
-       (function(d, s, id){
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) {return;}
-          js = d.createElement(s); js.id = id;
-          js.src = "https://connect.facebook.net/en_US/sdk.js";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-         //페이스북 SDK 호출
-
-         </script>
 <!--채팅기능-->
 <p>
   <!--Start of Tawk.to Script-->
