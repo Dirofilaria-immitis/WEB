@@ -36,7 +36,6 @@
                   version          : 'v9.0'
                 });
 
-                FB.AppEvents.logPageView();
 
 
                FB.getLoginStatus(callback);
@@ -70,6 +69,7 @@
 
 
 <body>
+  <div id="fb-root"></div>
   <input type="button" value="night" onclick="Night_Mode(this)">
   <input type="button" name="login" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
