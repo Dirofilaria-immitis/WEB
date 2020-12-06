@@ -24,8 +24,11 @@
 
                 function checkLogin(){
                   var name2 = document.querySelector('#name2');
+                  var nameTxt = document.querySelector('#name');
                   if(gauth.isSignedIn.get()){
                     name2.value = 'Google Logout';
+                    var profile = gauth.currentUser.get().getBasicProfile();
+                    nameTxt.innerHTML = 'welcome <strong>' + profile.getName()+ '</strong> (구글 게정으로 로그인됨)';
                   } else{
                     name2.value = 'Google Login';
                   }
@@ -74,7 +77,7 @@
                 console.log(response);
                 if(response.status === 'connected'){
                  document.querySelector('#authBtn').value = 'Logout';
-                 FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome '+ resp.name});
+                 FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome '+ resp.name + '(페이스북 계정으로 로그인됨)'});
                }
                 else{
                   document.querySelector('#authBtn').value = 'Login';
@@ -110,18 +113,21 @@
      </script>
       <!--  페이스북 로그인-->
 
-     <input type="button" id="name2" value="checking.." onclick="
-     if(this.value === 'Google Login'){
-        gauth.signIn().then(function(){
-          checkLogin();
-        });
-     }
-     else{
-       gauth.signOut().then(function(){
-         checkLogin();
-       });
-     }">
+
   <input type="button" value="night" onclick="Night_Mode(this)">
+  <input type="button" id="name2" value="checking.." onclick="
+             if(this.value === 'Google Login'){
+                gauth.signIn({
+                  scope:'https://www.googleapis.com/auth/calendar'
+                }).then(function(){
+                  checkLogin();
+                });
+             }
+             else{
+               gauth.signOut().then(function(){
+                 checkLogin();
+               });
+             }">
   <input type="button" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
         FB.login(function(response){
