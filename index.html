@@ -39,7 +39,7 @@
                 console.log(response);
                 if(response.status === 'connected'){
                  document.querySelector('#authBtn').value = 'Logout';
-                 FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome 'resp.name})
+                 FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome 'resp.name});
 
                }
                 else{
