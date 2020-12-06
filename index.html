@@ -39,9 +39,12 @@
                 console.log(response);
                 if(response.status === 'connected'){
                  document.querySelector('#authBtn').value = 'Logout';
+                 FB.api('/me', function(resp){document.querySelector('name').innerHTML = ' Welcome 'resp.name})
+
                }
                 else{
                   document.querySelector('#authBtn').value = 'Login';
+                  document.querySelector('name').innerHTML = '';
                 }
               }
 
@@ -73,7 +76,9 @@
      </script>
 
 
+     <span id="name">
 
+     </span>
   <input type="button" value="night" onclick="Night_Mode(this)">
   <input type="button" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
