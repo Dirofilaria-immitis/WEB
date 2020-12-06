@@ -17,6 +17,8 @@
 
         <script src="color.js"></script>
         <link rel="stylesheet" href="style.css">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="270324604267-1ago7g7pags97446nqlf9rjloeer9s5m.apps.googleusercontent.com">
 
 
 
@@ -40,7 +42,6 @@
                 if(response.status === 'connected'){
                  document.querySelector('#authBtn').value = 'Logout';
                  FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome '+ resp.name});
-
                }
                 else{
                   document.querySelector('#authBtn').value = 'Login';
@@ -76,9 +77,7 @@
      </script>
 
 
-     <span id="name">
 
-     </span>
   <input type="button" value="night" onclick="Night_Mode(this)">
   <input type="button" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
@@ -94,6 +93,8 @@
         })
       }
         ">
+  <span id="name"></span>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <h1><a href="index.html">HOME</a></h1>
 
 
