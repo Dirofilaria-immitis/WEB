@@ -18,8 +18,38 @@
         <script src="color.js"></script>
         <link rel="stylesheet" href="style.css">
 
+
+
         <script>
-          function init() { gapi.load('auth2', function(){})}
+
+                function checkLogin(){
+                  var name2 = document.querySelector('#name2');
+                  if(GoogleAuth.isSignedIn.get()){
+                    console.log('logined');
+                    name2.value = 'Google Logout'
+                  } else{
+                    console.log('logouted');
+                    name2.value = 'Google Login'
+                  }
+                }
+
+
+                function init() {
+                                      gapi.load('auth2', function() {
+                                        window.gauth = gapi.auth2.init({
+                                          client_id: '270324604267-1ago7g7pags97446nqlf9rjloeer9s5m.apps.googleusercontent.com'
+                                        })
+
+                                        GoogleAuth.then(function(){
+                                          console.log('googlauth success');
+                                          checkLogin();
+
+                                        }, function(){
+                                          console.log('googlauth fail');
+                                      })
+                                    });
+                                    }
+
         </script>
 
 
@@ -81,7 +111,17 @@
      </script>
 
 
-
+     <input type="button" id="name2" value="checking.." onclick="
+     if(this.value === 'Google Login'){
+        gauth.signIn().then(function(){
+          checkLogin();
+        })
+     }
+     else{
+       gauth.signOut().then(function(){
+         checkLogin();
+       })
+     }">
   <input type="button" value="night" onclick="Night_Mode(this)">
   <input type="button" value="checking..." id="authBtn" onclick="
       if(this.value == 'Login'){
