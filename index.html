@@ -17,8 +17,12 @@
 
         <script src="color.js"></script>
         <link rel="stylesheet" href="style.css">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
-        <meta name="google-signin-client_id" content="270324604267-1ago7g7pags97446nqlf9rjloeer9s5m.apps.googleusercontent.com">
+
+        <script>
+          function init() { gapi.load('auth2', function(){})}
+        </script>
+
+
 
 
 
@@ -94,7 +98,6 @@
       }
         ">
   <span id="name"></span>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
   <h1><a href="index.html">HOME</a></h1>
 
 
@@ -214,6 +217,9 @@ s.setAttribute('data-timestamp', +new Date());
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
+
+
+        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </body>
 
 
