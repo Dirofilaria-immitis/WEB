@@ -5,5 +5,5 @@
     {"id":"3", "name":"Hfdsg", "email":"fbfzdff@wqghreh.com"}
     ]';
 
-    echo $_GET["callback"]."(".data.")";
+    echo $_GET["callback"]."(".$data.")";
  ?>
