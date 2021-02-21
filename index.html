@@ -1,271 +1,179 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Home</title>
-  <meta charset="utf-8">
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D1S37ZQCCL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-D1S37ZQCCL');
-  </script>
-
-
-        <script src="color.js"></script>
-        <link rel="stylesheet" href="style.css">
-
-
-
-        <script>
-
-                function checkLogin(){
-                  var name2 = document.querySelector('#name2');
-                  var nameTxt = document.querySelector('#name');
-                  if(gauth.isSignedIn.get()){
-                    name2.value = 'Google Logout';
-                    var profile = gauth.currentUser.get().getBasicProfile();
-                    nameTxt.innerHTML = 'welcome <strong>' + profile.getName()+ '</strong> (구글 게정으로 로그인됨)';
-                  } else{
-                    name2.value = 'Google Login';
-                  }
-                }
-
-
-                function init() {
-                                      gapi.load('auth2', function() {
-                                        window.gauth = gapi.auth2.init({
-                                          client_id: '270324604267-1ago7g7pags97446nqlf9rjloeer9s5m.apps.googleusercontent.com'
-                                        })
-
-                                        gauth.then(function(){
-                                          console.log('googlauth success');
-                                          checkLogin();
-
-                                        }, function(){
-                                          console.log('googlauth fail');
-                                      })
-                                    });
-                                    }
-
-        </script>
-        <!--  구글 로그인-->
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-
-
-
-
-<body>
-
-      <script>
-             var checkLoginStatus = function(response){
-                console.log(response);
-                if(response.status === 'connected'){
-                 document.querySelector('#authBtn').value = 'Logout';
-                 FB.api('/me', function(resp){document.querySelector('#name').innerHTML = ' Welcome '+ resp.name + '(페이스북 계정으로 로그인됨)'});
-               }
-                else{
-                  document.querySelector('#authBtn').value = 'Login';
-                  document.querySelector('#name').innerHTML = '';
-                }
-              }
-
-                window.fbAsyncInit = function(){
-              FB.init({
-                appId            : '378593423422786',
-                autoLogAppEvents : true,
-                xfbml            : true,
-                version          : 'v9.0'
-              });
-
-            /*  FB.getLoginStatus(checkLoginStatus);
-          }         주의할 것
-              */
-
-
-              FB.getLoginStatus(checkLoginStatus)
-            };
-
-
-
-           (function(d, s, id){
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) {return;}
-              js = d.createElement(s); js.id = id;
-              js.src = "https://connect.facebook.net/en_US/sdk.js";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-     </script>
-      <!--  페이스북 로그인-->
-
-
-  <input type="button" value="night" onclick="Night_Mode(this)">
-  <input type="button" id="name2" value="checking.." onclick="
-             if(this.value === 'Google Login'){
-                gauth.signIn({
-                  scope:'https://www.googleapis.com/auth/calendar'
-                }).then(function(){
-                  checkLogin();
-                });
-             }
-             else{
-               gauth.signOut().then(function(){
-                 checkLogin();
-               });
-             }">
-  <input type="button" value="checking..." id="authBtn" onclick="
-      if(this.value == 'Login'){
-        FB.login(function(response){
-          console.log('login =>', response)
-          checkLoginStatus(response)
-        })
-      }
-      else{
-        FB.logout(function(response){
-          console.log('logout =>', response)
-          checkLoginStatus(response)
-        })
-      }
-        ">
-  <span id="name"></span>
-  <h1><a href="index.html">HOME</a></h1>
-
-
- <nav id="topmenu">
-     <ul>
-   <li><a href="design.html">Design</a></li>
-   <li><a href="drawing.html">Drawing</a></li>
-   <li><a href="coding.html">Coding</a></li>
-   <li><a href="vet.html">Vet</a></li>
-    </ul>
- </nav>
-
-
-<h2>Welcome</h2>
-
-
-
-<!--상단 문구 시작-->
-<div id="grid">
-    <div id="para1">
-  <p>
-  Willkommen! ¡Bienvenido/a! Bienvenue! Benvenuto/a! Bem-vindo/a! Välkommen! Hoş geldin! Witaj! Selamat datang! Добро пожаловать! (dobro pozhalovat’!)
-  <br>Albanian i mirëpritur Bosnian dobrodošli Croatian dobrodošli Czech vitejte Dutch welkom Estonian tere tulemast Finnish tervetuloa French
-  <br>bienvenue/bienvenu German herzlich willkommen Greek καλως ΗΡΘΑΤΕ (kalos irthate) Hungarian üdvözöljük Icelandic velkominn Irish fáilte Italian
-  <br>benvenuta/ benvenuto Macedonian добредојден (dobredojde) Maltese merhba Norwegian velkommen Polish witamy Portuguese bem-vinda Romanian bine ati
-  <br>venit Russian добро пожаловать (dobro pozhalovat) Spanish bienvenidas/bienvenidos
-  Swedish välkommen Welsh croesoYiddish <a href="https://ko.wikipedia.org/wiki/%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94" target="_blank" title="안녕하세요">안녕하세요</a>
-  באַגריסן (hela)</p>
-
-    <!--이미지-->
-    <div id="image">
-  <a href="https://ko.wikipedia.org/wiki/%ED%95%98%ED%8A%B8"><img src="heart.png" id="img"></a>
-</div>
-
-    <p>
-    A welcome is a kind of greeting designed to introduce a person to a new place or situation, and to make them feel at ease.
-    <br>The term can similarly be used to describe the feeling of being accepted on the part of the new person.
-      </p>
-    <p>In some contexts, a welcome is extended to a stranger to an area or a household. "The concept of welcoming the stranger means intentionally
-    <br>building into the interaction those factors that make others feel that they belong, that they matter, and that you want to get to know them".[1]
-    <br>It is also noted, however, that "[i]n many community settings, being welcoming is viewed as in conflict with ensuring safety.
-    <br>Thus, welcoming becomes somewhat self-limited: 'We will be welcoming unless you do something unsafe'".[2] Different cultures have their own traditional forms of welcome,[3] and a variety of different practices can go into an effort to welcome:
-      </p>
-    </div>
-
-
-    <div id="para2">
-  <p>Making a welcome is not a physical fabrication, though welcome may be embodied and fostered by appropriate physical arrangements.
-  <br>There can be an aesthetics of welcome. What is there when one makes a welcome? No thing really, and yet more than any thing.
-  <br>When one makes a welcome one creates the conditions that promise of home. One makes it possible for the other not any longer to feel outside or out of it,
-  <br>but to feel at home.[4]
-    </p>
-  <p>Indications that visitors are welcome can occur at different levels. For example, a welcome sign, at the national, state, or municipal level,
-  <br>is a road sign at the border of a region that introduces or welcomes visitors to the region.[5] A welcome sign might also be present for a specific community,
-  <br>or an individual building. One architect suggests that "[a] primary distinction between a gateway and a Welcome sign is that the gateway
-  <br>is usually designed and built by an outsider, a developer or architect, while the Welcome sign has been designed and built by an inside member
-  <br>of the community".[6] A welcome mat is a doormat that welcomes visitors to a house or other building by providing them with a place to wipe
-  <br>their feet before entering.
-    </p>
-  <p>Another community tradition, the welcome wagon, a phrase that originally referred to an actual wagon containing a collection of
-  <br>useful gifts collected from residents of an area to welcome new people moving to that area.
-    </p>
-
-    <!--동영상-->
-    <div id="youtube">
-    <iframe src="https://www.youtube.com/embed/472AnCrHYVs" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-    </div>
-
-
-</div>
-
-
-
-    <div id="footer">
-
-  </div>
-
-
-<!--채팅기능-->
-<p>
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f972d0d0ac0d3179f0db3bb/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-</p>
-
-
-<!--댓글-->
-<div id="disqus_thread"></div>
-<script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://web1-nriglshsml.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-        <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
-</body>
-
-
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/columns.css">
+
+    <style media="screen">
+
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+    body{
+      min-width: 800px;
+      margin: 0 auto;
+      color: #28527a;
+      font-family: 'Noto Sans KR', sans-serif;
+      /*background-color: rgba(53,54,58) */
+    }
+
+    #top{
+      height: 10px;
+      background-color: #28527a;
+    }
+
+    #mainimage{
+      width: 10%;
+      height: 20%;
+      margin:0 auto;
+      display: block;
+    }
+
+
+
+    </style>
+  </head>
+  <body>
+
+    <div id="top"></div>
+
+    <img id="mainimage" src="img/Layer 1.png" alt="">
+        <div id="top"></div>
+    <nav class="topmenu">
+      <ul>
+        <li><a href="#">1st main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">2nd main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">3rd main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">4th maintreter menu</a>
+          <ul>
+            <li><a href="#">1st sub mendfgdfgu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">5th main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+
+      </ul>
+
+    </nav>
+
+
+    <div id="columns">
+              <figure>
+                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/cinderella.jpg"></a>
+
+            	<figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>
+            	</figure>
+
+            	<figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/mulan_2.jpg"></a>
+            	<figcaption>Rapunzel, clothed in 1820’s period fashion</figcaption>
+            	</figure>
+
+              <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/snow-white.jpg"></a>
+            	<figcaption>Belle, based on 1770’s French court fashion</figcaption>
+            	</figure>
+
+            	<figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/rapunzel.jpg"></a>
+            	<figcaption>Mulan, based on the Ming Dynasty period</figcaption>
+            	</figure>
+
+               <figure>
+            	 <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sleeping-beauty.jpg"></a>
+            	<figcaption>Sleeping Beauty, based on European fashions in 1485</figcaption>
+            	</figure>
+
+               <figure>
+            	 <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ariel.jpg"></a>
+            	<figcaption>Pocahontas based on 17th century Powhatan costume</figcaption>
+            	</figure>
+
+            	<figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/belle.jpg"></a>
+            	<figcaption>Snow White, based on 16th century German fashion</figcaption>
+            	</figure>
+
+               <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pocahontas_2.jpg"></a>
+            	<figcaption>Ariel wearing an evening gown of the 1890’s</figcaption>
+            	</figure>
+
+                <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiana.jpg"></a>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            	</figure>
+
+              <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/rapunzel.jpg"></a>
+            	<figcaption>Mulan, based on the Ming Dynasty period</figcaption>
+            	</figure>
+
+               <figure>
+            	 <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/sleeping-beauty.jpg"></a>
+            	<figcaption>Sleeping Beauty, based on European fashions in 1485</figcaption>
+            	</figure>
+
+               <figure>
+            	 <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ariel.jpg"></a>
+            	<figcaption>Pocahontas based on 17th century Powhatan costume</figcaption>
+            	</figure>
+
+            	<figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/belle.jpg"></a>
+            	<figcaption>Snow White, based on 16th century German fashion</figcaption>
+            	</figure>
+
+               <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/pocahontas_2.jpg"></a>
+            	<figcaption>Ariel wearing an evening gown of the 1890’s</figcaption>
+            	</figure>
+
+                <figure>
+            	<a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/tiana.jpg"></a>
+                <figcaption>Tiana wearing the <i>robe de style</i> of the 1920’s</figcaption>
+            	</figure>
+
+     </div>
+
+
+
+  </body>
 </html>
