@@ -2,99 +2,180 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="fontello-e5f7e9b5/css/twitter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script type="text/javascript">
+            document.getElementById('ToTheTop').onclick = function () {
+            window.scrollTo(0,0);
+            }
+
+            if (window.performance) {
+            console.info("window.performance work's fine on this browser");
+            }
+            if (performance.navigation.type == 1) {
+              console.info( "This page is reloaded" );
+              window.scrollTo(0,0);
+
+            } else {
+              console.info( "This page is not reloaded");
+            }
+    </script>
     <title></title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/font/fontello-25076b63/css/twitter.css">
   </head>
+
+
+
   <body>
-    <!-- Wrapper -->
-			<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<span class="avatar"><img src="images/avatar.png" alt="" /></span>
-						<h1>This is <strong>Visualize</strong>, a responsive site template designed by <a href="http://templated.co">TEMPLATED</a><br />
-						and released for free under the Creative Commons License.</h1>
-						<ul class="icons">
-							<li><a href="#" class="icon-mail"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon-github-circled"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon-youtube-play"><span class="label">500px</span></a></li>
-							<li><a href="#" class="icon-instagram"><span class="label">Email</span></a></li>
-						</ul>
-					</header>
+    <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+    <script type="text/javascript">
+      
+      var c1 = new mojs.Shape({
+        shape:'circle',
+        radius:{0:30},
+        left:0,
+        top:0,
+        x:0,
+        y:0,
+        fill:'transparent',
+        stroke:'tomato',
+        strokeWidth:{20:0},
+        duration:{0:500},
+        delay:0
+      });
 
-				<!-- Main -->
-					<section id="main">
-
-						<!-- Thumbnails -->
-							<section class="thumbnails">
-								<div>
-									<a href="https://i.pinimg.com/564x/e0/70/b5/e070b52b63fa64da1a07bcbe32317936.jpg">
-										<img src="https://i.pinimg.com/564x/59/a4/13/59a41302465705751fd3e45d4f489c19.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/02.jpg">
-										<img src="https://i.pinimg.com/564x/54/e3/07/54e3072d5bf78ee716685d35279c6358.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-								<div>
-									<a href="images/fulls/03.jpg">
-										<img src="https://i.pinimg.com/564x/a7/65/7b/a7657b9635f76fd72660d4ad4e214ddb.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/04.jpg">
-										<img src="https://i.pinimg.com/564x/84/9d/f8/849df8ed2d02ef9e22c265f6120727e8.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/05.jpg">
-										<img src="https://i.pinimg.com/564x/cb/40/91/cb40915ec1655a9b58942372e2279514.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-								<div>
-									<a href="https://i.pinimg.com/564x/05/67/05/056705cda789398470f44b4c3464a570.jpg">
-										<img src="https://i.pinimg.com/564x/05/67/05/056705cda789398470f44b4c3464a570.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/07.jpg">
-										<img src="https://i.pinimg.com/564x/2e/36/e8/2e36e8044d1a0939eed6e27f7ae8cf1c.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
-                <div>
-									<a href="images/fulls/03.jpg">
-										<img src="https://i.pinimg.com/564x/2e/20/ce/2e20cea10ee284ba0aab37be9be3c334.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/04.jpg">
-										<img src="https://i.pinimg.com/564x/3e/fa/c1/3efac177d5b8108543d7ce7a666fc194.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-									<a href="images/fulls/05.jpg">
-										<img src="https://i.pinimg.com/564x/7d/b6/72/7db6721f52293b96fc8cb6779e9ea043.jpg" alt="" />
-										<h3>Lorem ipsum dolor sit amet</h3>
-									</a>
-								</div>
+      document.addEventListener('click', function(e){
+        c1.generate().tune({x:e.pageX, y:e.pageY}).replay();
+      });
 
 
-                </section>
-					</section>
+    /*  var first = new mojs.Shape({
+        shape: 'circle',
+        radius: {
+        0: 40
+      },
+      stroke: 'cyan',
+      strokeWidth: {
+        20: 0
+      },
+      fill: 'none',
+      left: 0,
+      top: 0,
+      duration:300
+    });
+    document.addEventListener('click', function (e) {
+     first.tune({
+       x: e.pageX,
+       y: e.pageY
+     }).replay();
+   })  */
 
-				<!-- Footer -->
-					<footer id="footer">
-						<p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
-					</footer>
 
-			</div>
+    </script>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/main.js"></script>
+    <div class="maincontent">
+        <section class="scene zero">
+          <header>
+            <h1>As a veterinarian</h1>
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+          </header>
+        </section>
+
+        <section class="scene one">
+          <header>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</h1>
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+          </header>
+        </section>
+
+        <section class="scene two">
+          <header>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</h1>
+            <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</a>
+          </header>
+        </section>
+
+        <section class="scene three">
+          <header>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </header>
+        </section>
+
+        <section class="scene four">
+          <header>
+            <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</h1>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </header>
+        </section>
+
+      </div>
+
+
+        <nav class="topmenu">
+          <ul>
+            <li><a href="#">1st main menu</a>
+              <ul>
+                <li><a href="#">1st sub menu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">2nd main menu</a>
+              <ul>
+                <li><a href="#">1st sub menu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">3rd main menu</a>
+              <ul>
+                <li><a href="#">1st sub menu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">4th maintreter menu</a>
+              <ul>
+                <li><a href="#">1st sub mendfgdfgu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">5th main menu</a>
+              <ul>
+                <li><a href="#">1st sub menu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+
+
+          </ul>
+
+        </nav>
+
+    <div class="btn_group">
+      <button type="button" name="button" class="btn_top" id="ToTheTop"><a href="#" class="icon-angle-up"></a></button>
+    </div>
+
+    <footer id="footer">
+      <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+    </footer>
+
+
+
+
 
   </body>
 </html>
