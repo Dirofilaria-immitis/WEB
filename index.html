@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="fontello-e5f7e9b5/css/twitter.css">
+    <link rel="stylesheet" href="assets/fontello-e5f7e9b5/css/twitter.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/navbar.css">
     <script type="text/javascript">
@@ -22,6 +23,38 @@
             }
     </script>
     <title></title>
+    <style media="screen">
+    @media all and (max-width: 960px)  {
+        .scene{
+          height: 50vh;
+        }
+
+        .scene.zero{
+          margin-top: 60px;
+        }
+
+        .scene header{
+          max-width: 80%;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          font-size: 14px;
+        }
+
+        .scene header h1{
+          margin-bottom: 1rem;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        nav.topmenu ul li{
+          display: none;
+        }
+
+
+
+    }
+
+    </style>
   </head>
 
 
@@ -30,7 +63,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
     <script type="text/javascript">
-      
       var c1 = new mojs.Shape({
         shape:'circle',
         radius:{0:30},
@@ -48,29 +80,6 @@
       document.addEventListener('click', function(e){
         c1.generate().tune({x:e.pageX, y:e.pageY}).replay();
       });
-
-
-    /*  var first = new mojs.Shape({
-        shape: 'circle',
-        radius: {
-        0: 40
-      },
-      stroke: 'cyan',
-      strokeWidth: {
-        20: 0
-      },
-      fill: 'none',
-      left: 0,
-      top: 0,
-      duration:300
-    });
-    document.addEventListener('click', function (e) {
-     first.tune({
-       x: e.pageX,
-       y: e.pageY
-     }).replay();
-   })  */
-
 
     </script>
 
@@ -115,9 +124,9 @@
 
         <nav class="topmenu">
           <ul>
-            <li><a href="#">1st main menu</a>
+            <li><a href="#">WEB_Test</a>
               <ul>
-                <li><a href="#">1st sub menu</a></li>
+                <li><a href="root/changeurl.html">ChangeURL</a></li>
                 <li><a href="#">2nd sub menu</a></li>
                 <li><a href="#">3rd sub menu</a></li>
                 <li><a href="#">4th sub menu</a></li>
@@ -159,6 +168,17 @@
                 <li><a href="#">4th sub menu</a></li>
               </ul>
             </li>
+
+            <li><a href="#">6th main menu</a>
+              <ul>
+                <li><a href="#">1st sub menu</a></li>
+                <li><a href="#">2nd sub menu</a></li>
+                <li><a href="#">3rd sub menu</a></li>
+                <li><a href="#">4th sub menu</a></li>
+              </ul>
+            </li>
+            <a href="#"><img src="image/logo.png" alt="" id="logo"></a>
+
 
 
           </ul>
