@@ -1,11 +1,4 @@
-#logo{
-  width: 30px;
-  height: 26px;
-  position: fixed;
-  right: 3rem;
-  top: 17px;
 
-}
 
 
 
@@ -100,8 +93,27 @@
             white-space: nowrap;
           }
 
+
+          .topmenu .ham{
+            display: none;
+          }
+
+          .topmenu .hamimg{
+            width: 30px;
+            height: 30px;
+          }
+
+
 /*********************************************navbar*********************************************/
 
+#logo{
+  width: 30px;
+  height: 26px;
+  position: fixed;
+  top: 16px;
+  right: 1.5%;
+
+}
 
 body{
   margin: 0;
@@ -225,3 +237,44 @@ body{
           display: block;
           border-top: 1px solid rgba(255, 255, 255, 0.5);
     }
+
+@media all and (max-width: 960px)  {
+        .scene{
+          height: 50vh;
+        }
+
+        .scene.zero{
+          margin-top: 60px;
+        }
+
+        .scene header{
+          max-width: 80%;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          font-size: 14px;
+        }
+
+        .scene header h1{
+          margin-bottom: 1rem;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        nav.topmenu ul li{
+          display: none;
+        }
+
+        #logo{
+          top: 15px;
+
+        }
+
+        .topmenu .ham{
+          display: block;
+          position: fixed;
+          top: 15px;
+          left: 10px;
+        }
+
+
+        }
