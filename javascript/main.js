@@ -1,8 +1,18 @@
 $(function(){
   $('.topmenu .ham').click(function(){
     $('body').toggleClass('active');
+    if($('body').hasClass("active")){
+      $('html').css('overflow', 'hidden');
+    } else{
+        $('html').css('overflow', 'inherit');
+    }
+
   });
 });
+
+
+
+
 
 
 //////////////////// 이차 사이드메뉴 입니다. ///////////////////////////////////
@@ -48,7 +58,7 @@ $(function(){
     if($('.sidemenu ul li #menu3').hasClass("selected")){
       $('.sidemenu ul li.test5').css('display', 'none');
       $('.sidemenu ul li a.test6').css('display', 'none');
-      $('.sidemenu ul li #menu1').removeClass('selected');
+      $('.sidemenu ul li #menu3').removeClass('selected');
     } else{
       $('.sidemenu ul li.test5').css('display', 'block');
       $('.sidemenu ul li a.test6').css('display', 'block');
