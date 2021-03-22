@@ -1,11 +1,7 @@
 $(function(){
   $('.topmenu .ham').click(function(){
     $('body').toggleClass('active');
-    if($('body').hasClass("active")){
-      $('html').css('overflow', 'hidden');
-    } else{
-        $('html').css('overflow', 'inherit');
-    }
+    
 
   });
 });

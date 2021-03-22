@@ -211,12 +211,13 @@ body{
 
 
     .btn_top a{
-      font-size: 40px;
-      text-decoration: none;
-      color: white;
-      position: relative;
       top: -6px;
       left: -14px;
+      font-size: 40px;
+      position: relative;
+      text-decoration: none;
+      color: white;
+
     }
 
 #footer{

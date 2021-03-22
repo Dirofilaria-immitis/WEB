@@ -10,6 +10,7 @@ aside{
   height: 100vh;
   left:-80vw;
   transition: 0.4s;
+  overflow: scroll;
 }
 
 aside section{
@@ -20,7 +21,7 @@ aside section{
 
 body.active{
 
-/* position:fixed; */
+  position:fixed;
   top:0;
   left: 80vw;
   height: 100vh;
@@ -42,7 +43,7 @@ body:after{
 }
 
 .sidemenu ul{
-  height: 100vh;
+  height: 120vh;
   margin-top: 0;
 }
 
