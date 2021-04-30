@@ -1,0 +1,66 @@
+.btn_top{
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  border: 0px;
+  position: fixed;
+  right: 1%;
+  bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: block;
+  text-align:center;
+  z-index: 900;
+  }
+
+  .btn_top:hover{
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  }
+
+
+  .btn_top a{
+  top: -8px;
+  left: -10px;
+  font-size: 40px;
+  position: absolute;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8)
+
+  }
+  
+  body{
+    margin: 0;
+    overflow-x: hidden;
+    /*mojs가 가로로 너무 커지는 것을 방자 */
+    background-color: black;
+    transition: 0.4s;
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+
+  #footer{
+    text-align:center;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 200;
+    padding-bottom: 2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  #footer a{
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+
+  }
+
+  #footer:before{
+    content: "";
+    width: 10rem;
+    margin: 2rem auto;
+    display: block;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+
+

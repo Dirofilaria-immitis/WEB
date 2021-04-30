@@ -1,0 +1,125 @@
+.topmenu{
+  background-color: black;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+ }
+
+ nav.topmenu ul, li{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+ }
+
+ nav.topmenu a{
+   color:  rgba(255, 255, 255, 0.8);
+   text-decoration: inherit;
+   font-family: 'Noto Sans KR', sans-serif;
+   font-weight: 100;
+   font-size: 10px;
+ }
+
+ nav.topmenu{
+   text-align: center;
+   padding: 0;
+   margin-bottom: 20px;
+   /*box-shadow:2px 2px 5px rgba(0,0,0,0.3);*/
+ }
+
+ nav.topmenu li{
+   /*background-color: white;*/
+   position: relative;
+   padding: 18px;
+
+ }
+
+
+ nav.topmenu li:hover > a{
+   color: rgba(255, 255, 255, 1);
+
+ }
+
+ nav.topmenu ul ul{
+   display: none;
+   position: absolute;
+   top: 100%;
+   left: 0;
+   background-color: rgba(0, 0, 0, 0.8);
+
+
+ }
+
+
+ nav.topmenu li:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+ }
+
+ nav.topmenu li:hover >ul{
+   display: block;
+ }
+
+ nav.topmenu > ul {
+   display: inline-block;
+   padding-left: 2%;
+   width: 100%;
+   text-align: center;
+
+ }
+
+ nav.topmenu > ul > li{
+   float: left;
+   display: block;
+ }
+
+ nav.topmenu >ul::after{
+   content: "";
+   display: block;
+   clear: both;
+ }
+
+ nav.topmenu a{
+   font-size: 16px;
+   display: block;
+   white-space: nowrap;
+ }
+
+
+ .topmenu .ham{
+   display: none;
+ }
+
+ .topmenu .hamimg{
+   width: 30px;
+   height: 30px;
+ }
+
+ #logo{
+  width: 30px;
+  height: 26px;
+  position: fixed;
+  top: 16px;
+  right: 1.5%;
+
+}
+
+@media all and (max-width: 960px)  {
+  nav.topmenu ul li{
+    display: none;
+  }
+
+  #logo{
+    top: 15px;
+    position: absolute;
+  }
+
+  .topmenu .ham{
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+}
