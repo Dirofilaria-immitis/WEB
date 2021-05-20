@@ -1,53 +1,3 @@
-aside{
-  position: fixed;
-  top:0;
-  width: 80vw;
-  height: 100vh;
-  left:-80vw;
-  transition: 0.4s;
-  overflow: scroll;
-}
-
-aside section{
-    margin-top: 60px;
-    height: 100%;
-}
-
-
-body.active{
-
-  position:fixed;
-  top:0;
-  left: 80vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-body:after{
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0,0.8);
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s;
-  z-index: 800
-}
-
-.sidemenu ul{
-  height: 120vh;
-  margin-top: 0;
-}
-
-.sidemenu ul li{
-  height: 8vh;
-  line-height: 10vh;
-}
-
-
 
 
 
@@ -234,4 +184,3 @@ body.active aside{
   left: 0;
 
 }
-

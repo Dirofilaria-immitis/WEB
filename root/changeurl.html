@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="../css/aside.css">
+    <link rel="stylesheet" href="music.css">
+    <link rel="stylesheet" href="fontello-1486780e/css/twitter.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../javascript/main.js">
+    </script>
+    <style media="screen">
+
+      #wh{
+        color: white;
+      }
+
+      *{
+        box-sizing: border-box;
+      }
+
+      .topmenu{
+        z-index: 3;
+      }
+
+
+      .vid-header{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .container{
+        max-width: 960px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: auto;
+        text-align: center;
+      }
+
+      .fullscrean-vid-wrap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .fullscrean-vid-wrap video{
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .header-overay{
+        height: 95vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        z-index: 1;
+        opacity: 0.8;
+        margin-top: 60px;
+      }
+
+      .header-content h1{
+        margin-bottom: 0;
+      }
+
+      .header-content{
+        z-index: 2;
+      }
+
+      .header-content article{
+        display: block;
+        padding-bottom: 2rem;
+        padding-top: 1rem;
+      }
+
+      .btn{
+        background: #dfdfdf;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem;
+        color: black;
+        opacity: 0.8;
+      }
+
+      .btn:hover{
+        background-color: white;
+      }
+
+      section{
+        padding: 20px 0;
+      }
+
+      .section-b{
+        background-color: white;
+        color: black;
+      }
+
+      @media all and (max-width: 960px)  {
+        .container{
+          padding-right: 3rem;
+          padding-left: 3rem;
+        }
+
+        nav.topmenu ul li{
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="">
+    <aside class="sidemenu">
+      <section class="content">
+        <ul>
+
+
+          <li>
+            <h3><a id="menu1" href="javascript:void(0)"><i class="fas fa-address-book"></i>WEB_Test</a></h3>
+          </li>
+          <li class="test1"><h5><a href="root/changeurl.html" class="test2">ChangeURL</a></h5></li>
+          <li class="test1"><h5><a href="#" class="test2">TESTEST</a></h5></li>
+          <li class="test1"><h5><a href="#" class="test2">TESTEST</a></h5></li>
+          <li class="test1"><h5><a href="#" class="test2">TESTEST</a></h5></li>
+
+
+
+          <li>
+            <h3><a id="menu2" href="javascript:void(0)"><i class="fas fa-box"></i>2nd main menu</a></h3>
+          </li>
+          <li class="test3"><h5><a href="#" class="test4">TESTEST</a></h5></li>
+          <li class="test3"><h5><a href="#" class="test4">TESTEST</a></h5></li>
+          <li class="test3"><h5><a href="#" class="test4">TESTEST</a></h5></li>
+          <li class="test3"><h5><a href="#" class="test4">TESTEST</a></h5></li>
+
+
+
+
+          <li>
+            <h3><a id="menu3" href="javascript:void(0)"><i class="fab fa-android"></i>3nd main menu</a></h3>
+          </li>
+          <li class="test5"><h5><a href="#" class="test6">TESTEST</a></h5></li>
+          <li class="test5"><h5><a href="#" class="test6">TESTEST</a></h5></li>
+          <li class="test5"><h5><a href="#" class="test6">TESTEST</a></h5></li>
+          <li class="test5"><h5><a href="#" class="test6">TESTEST</a></h5></li>
+
+
+
+
+
+          <li>
+            <h3><a id="menu4" href="javascript:void(0)"><i class="fas fa-at"></i>4nd main menu</a></h3>
+          </li>
+          <li class="test7"><h5><a href="#" class="test8">TESTEST</a></h5></li>
+          <li class="test7"><h5><a href="#" class="test8">TESTEST</a></h5></li>
+          <li class="test7"><h5><a href="#" class="test8">TESTEST</a></h5></li>
+          <li class="test7"><h5><a href="#" class="test8">TESTEST</a></h5></li>
+
+
+
+
+          <li>
+            <h3><a id="menu5" href="javascript:void(0)"><i class="fab fa-blogger"></i>5nd main menu</a></h3>
+          </li>
+          <li class="test9"><h5><a href="#" class="test10">TESTEST</a></h5></li>
+          <li class="test9"><h5><a href="#" class="test10">TESTEST</a></h5></li>
+          <li class="test9"><h5><a href="#" class="test10">TESTEST</a></h5></li>
+          <li class="test9"><h5><a href="#" class="test10">TESTEST</a></h5></li>
+
+
+
+
+
+          <li>
+            <h3><a id="menu6" href="javascript:void(0)"><i class="fas fa-box"></i>6nd main menu</a></h3>
+          </li>
+          <li class="test11"><h5><a href="#" class="test12">TESTEST</a></h5></li>
+          <li class="test11"><h5><a href="#" class="test12">TESTEST</a></h5></li>
+          <li class="test11"><h5><a href="#" class="test12">TESTEST</a></h5></li>
+          <li class="test11"><h5><a href="#" class="test12">TESTEST</a></h5></li>
+
+        </ul>
+
+      </section>
+
+    </aside>
+
+    <header class="vid-header container">
+      <div class="fullscrean-vid-wrap">
+        <video src="Earth - 8947.mp4" width="100%" autoplay loop muted></video>
+      </div>
+
+      <div class="header-overay"></div>
+      <div class="header-content">
+        <h1 id="wh">안녕하세요!</h1>
+        <article id="wh">
+          <div class="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </div>
+          </article>
+
+
+          <a href="changeurl.html" class="btn">Load-Page1</a>
+          <a href="page2.html" class="btn">Load-Page2</a>
+
+          <script src="page.js"></script>
+
+      </div>
+
+
+
+    </header>
+
+
+
+    <section class="section-a">
+      <div class="container">
+      <h1 id="wh">Section-A</h1>
+      <p id="wh">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+
+    <section class="section-b">
+      <div class="container">
+      <h1>Section-B</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </section>
+
+
+    <nav class="topmenu">
+
+
+      <ul>
+        <a href="#" class="ham"><img src="image/ham.png" class="hamimg" alt=""></a>
+        <li><a href="#">WEB_Test</a>
+          <ul>
+            <li><a href="changeurl.html">ChangeURL</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">2nd main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">3rd main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">4th maintreter menu</a>
+          <ul>
+            <li><a href="#">1st sub mendfgdfgu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">5th main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#">6th main menu</a>
+          <ul>
+            <li><a href="#">1st sub menu</a></li>
+            <li><a href="#">2nd sub menu</a></li>
+            <li><a href="#">3rd sub menu</a></li>
+            <li><a href="#">4th sub menu</a></li>
+          </ul>
+        </li>
+        <a href="../index.html"><img src="image/logo.png" alt="" id="logo"></a>
+
+
+
+      </ul>
+
+    </nav>
+
+
+
+    <nav class="musicplayer">
+        <a href="#play" class="music icon-play" id="play"></a>
+        <a href="#stop" class="music icon-stop" id="pause"></a>
+    </nav>
+
+
+
+    <footer id="footer">
+      <p>&copy; Untitled. All rights reserved. Design: <a href="http://templated.co">TEMPLATED</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p>
+    </footer>
+
+  </body>
+</html>

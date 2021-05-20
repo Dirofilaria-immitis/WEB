@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style media="screen">
+    img.selected{
+      opacity: 0.5;
+    }
+
+    </style>
+
+
+
+
+  </head>
+  <body>
+
+
+
+    <img src="https://i.pinimg.com/474x/26/0f/6d/260f6dde4df2aa6c2836590a09181f5c.jpg"  alt="">
+
+    <img src="https://i.pinimg.com/474x/f2/67/61/f26761a91be80fdf826a5d28c71ddda8.jpg" alt="">
+
+    <script>
+var image = document.querySelectorAll("img");
+for(var i = 0; i < image.length; i++){
+  image[i].setAttribute('class', 'selected');
+}
+image[0].style.opacity= 0.5;
+
+
+//image.addEventListener('mouseover', function(e){
+//  if(image.getAttribute('class')=='selected'){
+//    image.setAttribute('class', '');
+//  } else{
+//    image.setAttribute('class', 'selected')
+//  }
+//})
+
+    </script>
+  </body>
+</html>

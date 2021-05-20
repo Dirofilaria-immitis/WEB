@@ -12,7 +12,7 @@ $(window).on('popstate', function(event){
   $('article').load(location.href+' article>.content');
 })
 
-var audio = new Audio('contents/1_1/contents/chopin.mp3');
+var audio = new Audio('chopin.mp3');
   $(document).on('click', '#play', function(event){
     audio.play();
   });
